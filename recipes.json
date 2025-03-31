@@ -1,0 +1,107 @@
+[
+    {
+        "title": "Classic Margherita Pizza",
+        "ingredients": ["pizza dough", "tomato sauce", "mozzarella cheese", "fresh basil", "olive oil", "salt"],
+        "instructions": "1. Preheat oven to 475°F (245°C). 2. Roll out the pizza dough. 3. Spread tomato sauce evenly on the dough. 4. Add slices of mozzarella cheese. 5. Bake for 10-12 minutes until cheese is melted and crust is golden. 6. Garnish with fresh basil and drizzle olive oil before serving.",
+        "prep_time": 15,
+        "cook_time": 12
+    },
+    {
+        "title": "Spaghetti Carbonara",
+        "ingredients": ["spaghetti", "pancetta", "eggs", "Parmesan cheese", "black pepper", "salt"],
+        "instructions": "1. Cook spaghetti in salted boiling water. 2. In a pan, cook pancetta until crispy. 3. In a bowl, whisk eggs and Parmesan cheese. 4. Drain pasta and combine with pancetta. 5. Remove from heat and stir in the egg mixture quickly. 6. Season with black pepper and serve immediately.",
+        "prep_time": 10,
+        "cook_time": 15
+    },
+    {
+        "title": "Vegetable Stir Fry",
+        "ingredients": ["broccoli", "carrots", "bell peppers", "soy sauce", "garlic", "ginger", "sesame oil"],
+        "instructions": "1. Chop all vegetables into bite-sized pieces. 2. Heat sesame oil in a wok. 3. Add garlic and ginger, stir-fry for 30 seconds. 4. Add vegetables and stir-fry for 5-7 minutes. 5. Pour in soy sauce and cook for another 2 minutes. 6. Serve hot with rice or noodles.",
+        "prep_time": 15,
+        "cook_time": 10
+    },
+    {
+        "title": "Chicken Caesar Salad",
+        "ingredients": ["romaine lettuce", "grilled chicken breast", "croutons", "Parmesan cheese", "Caesar dressing"],
+        "instructions": "1. Chop romaine lettuce. 2. Slice grilled chicken breast. 3. Toss lettuce, chicken, croutons, and Caesar dressing together. 4. Top with shaved Parmesan cheese and serve chilled.",
+        "prep_time": 10,
+        "cook_time": 15
+    },
+    {
+        "title": "Tomato Basil Soup",
+        "ingredients": ["tomatoes", "onion", "garlic", "vegetable broth", "fresh basil", "olive oil", "salt", "pepper"],
+        "instructions": "1. Sauté chopped onion and garlic in olive oil. 2. Add chopped tomatoes and cook for 10 minutes. 3. Pour in vegetable broth and simmer for 20 minutes. 4. Blend the soup until smooth. 5. Season with salt and pepper. 6. Garnish with fresh basil before serving.",
+        "prep_time": 15,
+        "cook_time": 30
+    },
+    {
+        "title": "Grilled Cheese Sandwich",
+        "ingredients": ["bread slices", "cheddar cheese", "butter"],
+        "instructions": "1. Butter one side of each bread slice. 2. Place cheese between two slices, buttered sides out. 3. Grill on a skillet over medium heat until golden brown on both sides and cheese is melted. 4. Serve hot.",
+        "prep_time": 5,
+        "cook_time": 10
+    },
+    {
+        "title": "Beef Tacos",
+        "ingredients": ["ground beef", "taco shells", "lettuce", "tomatoes", "cheddar cheese", "sour cream", "taco seasoning"],
+        "instructions": "1. Cook ground beef with taco seasoning. 2. Chop lettuce and tomatoes. 3. Fill taco shells with beef, lettuce, tomatoes, and cheese. 4. Top with sour cream and serve.",
+        "prep_time": 15,
+        "cook_time": 10
+    },
+    {
+        "title": "Pancakes",
+        "ingredients": ["flour", "milk", "eggs", "sugar", "baking powder", "butter", "salt"],
+        "instructions": "1. Mix flour, sugar, baking powder, and salt. 2. Whisk in milk and eggs. 3. Melt butter and add to batter. 4. Cook pancakes on a greased skillet until bubbles form, then flip and cook until golden. 5. Serve with syrup.",
+        "prep_time": 10,
+        "cook_time": 15
+    },
+    {
+        "title": "Classic Omelette",
+        "ingredients": ["eggs", "milk", "cheddar cheese", "salt", "pepper", "butter"],
+        "instructions": "1. Whisk eggs, milk, salt, and pepper. 2. Melt butter in a pan. 3. Pour in egg mixture and cook until set. 4. Add cheese and fold omelette. 5. Serve hot.",
+        "prep_time": 5,
+        "cook_time": 10
+    },
+    {
+        "title": "Garlic Butter Shrimp",
+        "ingredients": ["shrimp", "garlic", "butter", "lemon juice", "parsley", "salt", "pepper"],
+        "instructions": "1. Melt butter in a skillet. 2. Add minced garlic and cook until fragrant. 3. Add shrimp, salt, and pepper, and cook until pink. 4. Drizzle lemon juice and sprinkle parsley before serving.",
+        "prep_time": 10,
+        "cook_time": 10
+    },
+    {
+        "title": "Chicken Fried Rice",
+        "ingredients": ["cooked rice", "chicken breast", "peas", "carrots", "soy sauce", "eggs", "green onions", "oil"],
+        "instructions": "1. Cook diced chicken in oil. 2. Add peas and carrots and stir-fry. 3. Push ingredients to the side, scramble eggs in the same pan. 4. Add rice and soy sauce, stir-fry everything together. 5. Garnish with green onions.",
+        "prep_time": 15,
+        "cook_time": 15
+    },
+    {
+        "title": "Lemon Herb Grilled Chicken",
+        "ingredients": ["chicken breast", "lemon juice", "olive oil", "garlic", "mixed herbs", "salt", "pepper"],
+        "instructions": "1. Marinate chicken with lemon juice, olive oil, minced garlic, herbs, salt, and pepper for at least 30 minutes. 2. Grill chicken until fully cooked. 3. Serve with steamed vegetables or salad.",
+        "prep_time": 40,
+        "cook_time": 20
+    },
+    {
+        "title": "Vegetable Soup",
+        "ingredients": ["carrots", "celery", "onion", "potatoes", "vegetable broth", "garlic", "salt", "pepper", "olive oil"],
+        "instructions": "1. Sauté onions, garlic, carrots, and celery in olive oil. 2. Add diced potatoes and vegetable broth. 3. Simmer until vegetables are tender. 4. Season with salt and pepper before serving.",
+        "prep_time": 20,
+        "cook_time": 30
+    },
+    {
+        "title": "Egg Fried Rice",
+        "ingredients": ["cooked rice", "eggs", "soy sauce", "green onions", "carrots", "peas", "oil"],
+        "instructions": "1. Scramble eggs in a hot pan with oil. 2. Add diced vegetables and stir-fry. 3. Add cooked rice and soy sauce. 4. Stir well and cook until heated through. 5. Garnish with chopped green onions.",
+        "prep_time": 10,
+        "cook_time": 15
+    },
+    {
+        "title": "Beef and Broccoli",
+        "ingredients": ["beef slices", "broccoli", "soy sauce", "garlic", "ginger", "cornstarch", "oil"],
+        "instructions": "1. Marinate beef with soy sauce, garlic, ginger, and cornstarch. 2. Stir-fry beef in oil until browned. 3. Add broccoli and stir-fry until tender. 4. Serve hot with rice.",
+        "prep_time": 20,
+        "cook_time": 15
+    }
+]

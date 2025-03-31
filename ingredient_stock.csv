@@ -1,0 +1,12 @@
+ingredient,available_quantity,unit,expiry_in_days,price_per_unit
+tomato,50,kg,5,40
+onion,30,kg,10,30
+cheese,20,kg,7,300
+flour,100,kg,15,50
+olive oil,10,l,20,600
+chicken,40,kg,3,250
+lettuce,25,kg,2,40
+potato,60,kg,8,25
+spinach,15,kg,3,80
+butter,20,kg,500
+eggs,50,unit,5,6

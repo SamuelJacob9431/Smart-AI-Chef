@@ -1,0 +1,11 @@
+title,ingredients,instructions,prep_time,cook_time
+Tomato Soup,"tomato, water, salt","Boil tomatoes until soft. Blend them. Add salt and simmer for 10 minutes.",10,20
+Veg Stir Fry,"carrot, broccoli, bell pepper, soy sauce","Chop vegetables. Stir-fry with soy sauce until tender.",15,10
+Grilled Cheese Sandwich,"bread, cheese, butter","Place cheese between bread slices. Butter outside. Grill until golden brown.",5,5
+Potato Curry,"potato, onion, spices, oil","Peel and dice potatoes. Fry onions. Add spices and potatoes. Cook until soft.",15,25
+Fruit Salad,"apple, banana, orange, honey","Chop fruits. Mix with honey. Serve chilled.",10,0
+Pasta Marinara,"pasta, tomato sauce, garlic, olive oil","Boil pasta. Prepare sauce with garlic and tomato sauce. Mix and serve.",10,15
+Vegetable Fried Rice,"rice, carrot, peas, soy sauce","Cook rice. Stir-fry vegetables. Mix with rice and soy sauce.",15,10
+Mashed Potatoes,"potatoes, butter, milk, salt","Boil potatoes. Mash with butter, milk, and salt.",10,20
+Omelette,"eggs, onion, tomato, salt","Beat eggs. Fry vegetables. Pour eggs and cook both sides.",5,10
+Smoothie,"banana, milk, honey","Blend all ingredients until smooth.",5,0

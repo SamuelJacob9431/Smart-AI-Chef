@@ -1,0 +1,9 @@
+order_id,customer_id,recipe_name,order_date,quantity
+1001,C001,Tomato Pasta,2024-03-01,2
+1002,C002,Cheese Pizza,2024-03-01,1
+1003,C003,Tomato Pasta,2024-03-01,1
+1004,C004,Grilled Chicken Salad,2024-03-02,3
+1005,C002,Cheese Pizza,2024-03-02,2
+1006,C001,Spinach Omelette,2024-03-03,1
+1007,C005,Tomato Pasta,2024-03-03,2
+1008,C003,Onion Rings,2024-03-03,1

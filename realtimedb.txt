@@ -1,0 +1,114 @@
+# --- database_handler.py ---
+import pandas as pd
+import os
+
+DB_FILE = 'transaction_database.csv'
+
+# Initialize Database if not exists
+if not os.path.exists(DB_FILE):
+    df_init = pd.DataFrame(columns=['transaction_id', 'user_email', 'amount', 'status', 'otp_status', 'final_status'])
+    df_init.to_csv(DB_FILE, index=False)
+
+def add_transaction(txn_id, email, amount):
+    df = pd.read_csv(DB_FILE)
+    df = df.append({'transaction_id': txn_id, 'user_email': email, 'amount': amount, 'status': 'pending', 'otp_status': None, 'final_status': None}, ignore_index=True)
+    df.to_csv(DB_FILE, index=False)
+
+def update_transaction(txn_id, **kwargs):
+    df = pd.read_csv(DB_FILE)
+    for key, value in kwargs.items():
+        df.loc[df['transaction_id'] == txn_id, key] = value
+    df.to_csv(DB_FILE, index=False)
+
+def get_transaction(txn_id):
+    df = pd.read_csv(DB_FILE)
+    return df[df['transaction_id'] == txn_id]
+
+# --- agents.py ---
+def agent1(txn_id):
+    # Dummy Agent 1
+    return txn_id % 2 == 0
+
+def agent2(txn_id):
+    # Dummy Agent 2
+    return txn_id % 3 == 0
+
+# --- otp_service.py ---
+import random
+import smtplib
+from email.mime.text import MIMEText
+import time
+
+otp_store = {}
+
+def send_otp(email):
+    otp = random.randint(100000, 999999)
+    otp_store[email] = (otp, time.time() + 300)
+    print(f"[Demo OTP]: {otp} (also sent to {email})")
+
+    # --- SMTP Demo ---
+    # Uncomment & configure below to actually send email
+    # msg = MIMEText(f'Your OTP is: {otp}')
+    # msg['Subject'] = 'Transaction OTP'
+    # msg['From'] = 'your_email@gmail.com'
+    # msg['To'] = email
+    #
+    # server = smtplib.SMTP('smtp.gmail.com', 587)
+    # server.starttls()
+    # server.login('your_email@gmail.com', 'your_app_password')
+    # server.send_message(msg)
+    # server.quit()
+
+    return otp
+
+def verify_otp(email, input_otp):
+    if email not in otp_store:
+        return False, 'OTP not generated'
+    otp, expiry = otp_store[email]
+    if time.time() > expiry:
+        return False, 'OTP expired'
+    if int(input_otp) == otp:
+        del otp_store[email]
+        return True, 'OTP verified'
+    return False, 'Incorrect OTP'
+
+# --- app.py ---
+from flask import Flask, request, jsonify
+import database_handler as db
+import agents
+import otp_service
+
+app = Flask(__name__)
+
+@app.route('/add_transaction', methods=['POST'])
+def add_transaction():
+    data = request.json
+    db.add_transaction(data['txn_id'], data['email'], data['amount'])
+    return jsonify({'message': 'Transaction added'})
+
+@app.route('/check_transaction', methods=['POST'])
+def check_transaction():
+    data = request.json
+    txn_id, email = data['txn_id'], data['email']
+    if agents.agent1(txn_id) and agents.agent2(txn_id):
+        otp_service.send_otp(email)
+        db.update_transaction(txn_id, status='fraud_check', otp_status='OTP_Sent', final_status='awaiting_otp')
+        return jsonify({'fraud': True, 'message': 'OTP sent'})
+    else:
+        db.update_transaction(txn_id, status='approved', final_status='Completed')
+        return jsonify({'fraud': False, 'message': 'Transaction approved'})
+
+@app.route('/verify_otp', methods=['POST'])
+def verify_otp():
+    data = request.json
+    txn_id, email, otp_input = data['txn_id'], data['email'], data['otp']
+    success, msg = otp_service.verify_otp(email, otp_input)
+    if success:
+        db.update_transaction(txn_id, otp_status='Verified', final_status='Completed')
+        return jsonify({'success': True, 'message': 'Transaction Approved'})
+    else:
+        db.update_transaction(txn_id, final_status='Revoked')
+        return jsonify({'success': False, 'message': f'Transaction Revoked. Reason: {msg}'})
+
+if __name__ == "__main__":
+    app.run(debug=True)

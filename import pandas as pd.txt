@@ -1,0 +1,47 @@
+import pandas as pd
+import numpy as np
+from sklearn.ensemble import IsolationForest
+from sklearn.preprocessing import StandardScaler
+
+# Load dataset
+df = pd.read_csv('real_time_transactions.csv')  # Use your uploaded file name
+
+# Inspect columns
+print("Columns in the dataset:", df.columns.tolist())
+
+# Choose correct feature columns (Replace these with actual columns from your CSV)
+selected_features = ['feature1', 'feature2', 'feature3', 'feature4']  # Change this to match your CSV columns exactly
+
+# Remove rows with missing values in selected columns
+df = df.dropna(subset=selected_features)
+
+# Standardize features
+scaler = StandardScaler()
+df[selected_features] = scaler.fit_transform(df[selected_features])
+
+# Train Isolation Forest model
+model = IsolationForest(contamination=0.02, random_state=42)
+model.fit(df[selected_features])
+
+# Function to process and flag line by line
+def process_transactions(file_path, output_file):
+    df_iter = pd.read_csv(file_path, chunksize=1)  # Read 1 row at a time
+    results = []
+
+    for i, chunk in enumerate(df_iter):
+        try:
+            txn = chunk[selected_features]
+            txn_scaled = scaler.transform(txn)
+            prediction = model.predict(txn_scaled)
+            label = 'Fraud' if prediction[0] == -1 else 'Normal'
+            chunk['Fraud_Flag'] = label
+            results.append(chunk)
+        except Exception as e:
+            print(f"⚠️ Skipping row {i} due to error: {e}")
+
+    # Save flagged transactions to a new CSV
+    pd.concat(results).to_csv(output_file, index=False)
+    print(f"✅ Flagged transactions saved to '{output_file}'")
+
+# Process
+process_transactions('real_time_transactions.csv', 'flagged_transactions.csv')
